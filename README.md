@@ -5,3 +5,9 @@ Dette er et skole projekt på Zealand Næstved
 Her er resultat af test inden "leg"
 
 ![test](images/Pytest_resultat_inden_leg.png)
+
+Her er resultat af test efter "leg"
+
+![test](images/Pytest_resultat_efter_leg.png)
+
+
