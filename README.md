@@ -10,4 +10,7 @@ Her er resultat af test efter "leg"
 
 ![test](images/Pytest_resultat_efter_leg.png)
 
+Her er resultat af tilføjet test
+![test](images/Pytest_flere_test.png)
+
 
