@@ -31,6 +31,8 @@ hastighed <= 50km/t
 - 50km/t -> ja
 - 51km/t -> nej
 
+PS: Denne er lavet før valgt REST API som It-sikkerheds emne
+
 ## CRUD
 Test af CRUD funktionalitet er noget der bliver testet især ved REST API'er, som kan ses herunder:
 
@@ -81,5 +83,18 @@ Vi kan stille de tabellen op således:
 | R2    | Ja            | Ja    | –    | Tilladt          |
 | R3    | Ja            | Nej   | Ja   | 403 Forbidden    |
 | R4    | Ja            | Nej   | Nej  | 403 Forbidden    |
+
+## Security gates
+
+- Code/Dev Gate
+Da gate Code/Dev har med input validering at gøre, ville jeg ligge CRUD, Grænseværdi. 
+
+- Integration Security Gate
+ 
+- System Security Gate
+
+- Realese Candidate Security Gate
+
+- Go / No-Go Security Gate
 
 
