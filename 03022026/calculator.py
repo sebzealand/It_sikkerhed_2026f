@@ -1,4 +1,4 @@
-import calculations as cf
+import calc_functions as cf
 import sys
 import os
 

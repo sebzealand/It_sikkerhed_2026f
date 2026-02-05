@@ -1,5 +1,5 @@
 import pytest
-import calculations as c
+import calc_functions as c
 
 # ========== PASSED ==========
 def test_pass_adding():
