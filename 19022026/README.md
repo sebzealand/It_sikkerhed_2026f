@@ -8,13 +8,13 @@ REST API er blevet implementeret i GO. Der bliver brugt en flat file som databas
 
 ## Resultat
 Test af GET Endpoint:
-![GET]("images/GET endpoint.png")
+![GET](images/GET endpoint.png)
 
 Test af POST Endpoint:
-![POST]("images/POST endpoint.png")
+![POST](images/POST endpoint.png)
 
 Test af PUT Endpoint:
-![PUT]("images/PUT endpoint.png")
+![PUT](images/PUT endpoint.png)
 
 TEST af DEL Endpoint:
-![DEL]("images/DEL endpoint.png")
+![DEL](images/DEL endpoint.png)
