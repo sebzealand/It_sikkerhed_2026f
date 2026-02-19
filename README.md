@@ -100,3 +100,6 @@ Da gate Code/Dev har med input validering at gøre, ville jeg ligge CRUD, Græns
 # 10022026
 Har lavet denne opgave fælles med en anden, så den kan findes her: https://github.com/sebzealand/Krypteringsopgave_10022026
 
+# 19022026
+[Se nærmere i 19022026 mappen](19022026/README.md)
+
