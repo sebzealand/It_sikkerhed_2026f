@@ -17,4 +17,4 @@ Test af PUT Endpoint:
 ![PUT](images/PUT endpoint.png)
 
 TEST af DEL Endpoint:
-![DEL](images/DEL endpoint.png)
+![DEL](images/DEL-endpoint.png)
