@@ -2,10 +2,10 @@
     "users": [
         {
             "person_id": 1,
-            "first_name": "John (Opdateret)",
+            "first_name": "John",
             "last_name": "Doe",
             "address": "somewhere",
-            "StreetNumber": 69,
+            "street_number": 0,
             "password": "test",
             "enabled": true
         },
@@ -14,7 +14,7 @@
             "first_name": "Mette",
             "last_name": "Viking",
             "address": "Aarhus",
-            "StreetNumber": 12,
+            "street_number": 0,
             "password": "hemmelig123",
             "enabled": true
         }
