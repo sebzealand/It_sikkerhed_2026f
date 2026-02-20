@@ -11,13 +11,13 @@ import (
 
 func TestGetUsers(t *testing.T) {
 	// Arrange
-	testFile := "data/test_data.json"
+	testFile := "../data/test_data.json"
 	defer os.Remove(testFile)
 
 	mockData := `{
 		"users": [
 			{"person_id": 1, "first_name": "John"},
-			{"person_id": 2, "first_name": "Jane"},
+			{"person_id": 2, "first_name": "Jane"}
 		]
 	}`
 	os.WriteFile(testFile, []byte(mockData), 0644)
@@ -37,7 +37,7 @@ func TestGetUsers(t *testing.T) {
 		t.Errorf("Antal brugere forkert: fik %d, men ville have %d", gotCount, wantCount)
 	}
 
-	if got.Users[0].FirstName != "john" || got.Users[1].FirstName != "Jane" {
+	if got.Users[0].FirstName != "John" || got.Users[1].FirstName != "Jane" {
 		t.Error("Navnene i de indlæste objekter matcher ikke mock-data")
 	}
 }
