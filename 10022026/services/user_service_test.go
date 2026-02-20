@@ -10,7 +10,7 @@ import (
 
 func TestCreateUser(t *testing.T) {
 	// Arrange
-	testFile := "/data/test_data.json"
+	testFile := "../data/test_data.json"
 	defer os.Remove(testFile)
 
 	want := models.UserList{
@@ -46,7 +46,8 @@ func TestCreateUser(t *testing.T) {
 
 func TestCreateUser_InvalidPath(t *testing.T) {
 	// Arrange
-	invalidFile := "findes_ikke.json"
+	invalidFile := ""
+	defer os.Remove(invalidFile)
 	data := models.UserList{Users: []models.User{{ID: 1}}}
 
 	// Act
