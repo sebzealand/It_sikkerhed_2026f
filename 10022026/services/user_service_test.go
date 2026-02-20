@@ -7,7 +7,51 @@ import (
 	"reflect"
 	"testing"
 )
+// TEST AF GET FUNKTIONALITET
 
+func TestGetUsers(t *testing.T) {
+	// Arrange
+	testFile := "data/test_data.json"
+	defer os.Remove(testFile)
+
+	mockData := `{
+		"users": [
+			{"person_id": 1, "first_name": "John"},
+			{"person_id": 2, "first_name": "Jane"},
+		]
+	}`
+	os.WriteFile(testFile, []byte(mockData), 0644)
+
+	// Act
+	got, err := GetUsers(testFile)
+
+	// Assert
+	if err != nil {
+		t.Fatalf("GetUsers fejlede uventet: %v", err)
+	}
+
+	wantCount := 2
+	gotCount := len(got.Users)
+
+	if gotCount != wantCount {
+		t.Errorf("Antal brugere forkert: fik %d, men ville have %d", gotCount, wantCount)
+	}
+
+	if got.Users[0].FirstName != "john" || got.Users[1].FirstName != "Jane" {
+		t.Error("Navnene i de indlæste objekter matcher ikke mock-data")
+	}
+}
+
+func TestGetUsers_FileNotFound(t *testing.T) {
+	_, err := GetUsers("")
+
+	if err == nil {
+		t.Error("Forventede en fejl for en ikke-eksisterende fil, men fik nil")
+	}
+}
+
+
+// TEST AF CREATE FUNKTIONALITET
 func TestCreateUser(t *testing.T) {
 	// Arrange
 	testFile := "../data/test_data.json"
