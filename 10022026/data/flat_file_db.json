@@ -1,0 +1,22 @@
+{
+    "users": [
+        {
+            "person_id": 1,
+            "first_name": "John",
+            "last_name": "Doe",
+            "address": "somewhere",
+            "street_number": 69,
+            "password": "test",
+            "enabled": true
+        },
+        {
+            "person_id": 2,
+            "first_name": "Knud",
+            "last_name": "Den Store",
+            "address": "Jellinge",
+            "street_number": 7,
+            "password": "test 2",
+            "enabled": true
+        }
+    ]
+}
