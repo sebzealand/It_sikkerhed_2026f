@@ -7,6 +7,7 @@ import (
 	"reflect"
 	"testing"
 )
+
 // TEST AF GET FUNKTIONALITET
 
 func TestGetUsers(t *testing.T) {
@@ -50,7 +51,6 @@ func TestGetUsers_FileNotFound(t *testing.T) {
 	}
 }
 
-
 // TEST AF CREATE FUNKTIONALITET
 func TestCreateUser(t *testing.T) {
 	// Arrange
@@ -60,19 +60,18 @@ func TestCreateUser(t *testing.T) {
 	want := models.UserList{
 		Users: []models.User{
 			{
-				ID: 1, 
-				FirstName: "Test", 
-				LastName: "Bruger", 
-				Address: "Testvej",
+				ID:           1,
+				FirstName:    "Test",
+				LastName:     "Bruger",
+				Address:      "Testvej",
 				StreetNumber: 1,
-				Password: "Test123",
-				Enabled: true,
+				Password:     []byte("Test123"),
+				Enabled:      true,
 			},
 		},
 	}
 
-
-	// Act 
+	// Act
 	err := CreateUser(testFile, want)
 	if err != nil {
 		t.Fatalf("Kan ikke gemme bruger: %v", err)

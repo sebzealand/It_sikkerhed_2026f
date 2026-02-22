@@ -1,21 +1,12 @@
 {
     "users": [
         {
-            "person_id": 1,
-            "first_name": "John",
-            "last_name": "Doe",
-            "address": "somewhere",
-            "street_number": 69,
-            "password": "test",
-            "enabled": true
-        },
-        {
-            "person_id": 2,
-            "first_name": "Knud",
-            "last_name": "Den Store",
-            "address": "Jellinge",
-            "street_number": 7,
-            "password": "test 2",
+            "person_id": 10,
+            "first_name": "CIGcO9QGOqL6hfYUfZ5MeXvnCO2RiHX3MmyEnEomKMK3/RLkwg==",
+            "last_name": "g7YTQKT+yA6OeppcWQ81vsssV+M51f8eLKfOA1Lb3+7Rgg==",
+            "address": "u2Q89j9NzNeHNQ8kwdJ9bsoJGlgwQ628mYGhMdiiPseTi7Qtm3U=",
+            "street_number": 2,
+            "password": "JDJhJDE0JDE1YVU2d21HbFg4RC82R1lTc3phaXVvWTRPbTR0UDYydS5USnRjbk40TlNyVG1CMnVmS3oy",
             "enabled": true
         }
     ]
