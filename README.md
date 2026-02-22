@@ -98,7 +98,7 @@ Da gate Code/Dev har med input validering at gøre, ville jeg ligge CRUD, Græns
 - Go / No-Go Security Gate
 
 # 10022026
-Har lavet denne opgave fælles med en anden, så den kan findes her: https://github.com/sebzealand/Krypteringsopgave_10022026
+[Se nærmere i 10022026 mappen](10022026/README.md)
 
 # 19022026
 [Se nærmere i 19022026 mappen](19022026/README.md)
