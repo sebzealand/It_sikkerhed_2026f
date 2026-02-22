@@ -976,3 +976,5 @@ pyrightconfig.json
 # End of https://www.toptal.com/developers/gitignore/api/go,csharp,python,jetbrains,goland,visualstudio,visualstudiocode
 
 
+10022026/.idea/
+10022026/go.sum
