@@ -2,21 +2,21 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	"go-rest-api/models"
 	"go-rest-api/services"
 	"net/http"
 	"strconv"
-	"fmt"
 )
 
 func UserHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	
-	users, err := services.LoadUsers()
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
+
+	users, err := services.GetUsers()
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 
 	switch r.Method {
 	case http.MethodGet:
@@ -30,11 +30,10 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		users.Users = append(users.Users, newUser)
-		services.SaveUsers(users)
+		services.CreateUser(newUser)
 		w.WriteHeader(http.StatusCreated)
 		json.NewEncoder(w).Encode(newUser)
-	
+
 	case http.MethodPut:
 		var updatedUser models.User
 		if err := json.NewDecoder(r.Body).Decode(&updatedUser); err != nil {
@@ -42,10 +41,9 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		if services.UpdateUser(&users, updatedUser) {
-			services.SaveUsers(users)
-			json.NewEncoder(w).Encode(updatedUser)
-		} else {
+		result := services.UpdateUser(updatedUser)
+
+		if result == false {
 			http.Error(w, "Bruger ikke fundet", http.StatusNotFound)
 		}
 
@@ -57,10 +55,9 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		if services.DeleteUser(&users, id) {
-			services.SaveUsers(users)
-			w.WriteHeader(http.StatusNoContent)
-		} else {
+		result := services.DeleteUser(id)
+
+		if result == false {
 			http.Error(w, "Bruger ikke fundet", http.StatusNotFound)
 		}
 
@@ -70,8 +67,8 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func DocsHandler(w http.ResponseWriter, r *http.Request) {
-    w.Header().Set("Content-Type", "text/html; charset=utf-8")
-    fmt.Fprint(w, `
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	fmt.Fprint(w, `
         <h1>Go User API - Dokumentation</h1>
         <ul>
             <li><strong>GET /users</strong> - Lister alle brugere</li>
